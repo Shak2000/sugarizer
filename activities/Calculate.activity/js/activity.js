@@ -2,7 +2,7 @@
 //Please look at calculateapp.js to see the related functions
 
 /* Start of the app, we require everything that is needed */
-define(["sugar-web/activity/activity","mustache","sugar-web/graphics/palette","activity/calculate-activity","activity/calculate-app","math","parser","nanomodal"], function (activity, mustache, calcpalette) {
+define(["sugar-web/activity/activity","mustache","sugar-web/graphics/palette","tutorial","activity/calculate-activity","activity/calculate-app","math","parser","nanomodal"], function (activity, mustache, calcpalette,tutorial) {
   CalculateApp.libs.palette = calcpalette;
 
   //function-plot depends on d3.
@@ -62,6 +62,10 @@ define(["sugar-web/activity/activity","mustache","sugar-web/graphics/palette","a
       }
     });
 
+	// Launch tutorial
+	document.getElementById("help-button").addEventListener('click', function(e) {
+		tutorial.start();
+	});
 
   });
 
